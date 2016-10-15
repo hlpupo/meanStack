@@ -5,6 +5,7 @@
   angular
     .module('meanStack')
     .constant('malarkey', malarkey)
-    .constant('moment', moment);
+    .constant('moment', moment)
+    .constant('API_URL', 'http://localhost:5000/');
 
 })();

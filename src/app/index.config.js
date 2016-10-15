@@ -5,8 +5,8 @@
     .module('meanStack')
     .config(config);
 
-  /** @ngInject */
-  function config($logProvider, toastrConfig) {
+  config.$inject = ['$logProvider', 'toastrConfig', '$authProvider', 'API_URL'];
+  function config($logProvider, toastrConfig, $authProvider, API_URL) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -16,6 +16,8 @@
     toastrConfig.positionClass = 'toast-top-right';
     toastrConfig.preventDuplicates = true;
     toastrConfig.progressBar = true;
+    $authProvider.baseUrl = API_URL;
+    $authProvider.singupUrl = API_URL + 'auth/signup';
   }
 
 })();
